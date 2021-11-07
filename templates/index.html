@@ -2,32 +2,46 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>❤ Heart Disease Predictor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://codepen.io/P1N2O/pen/xxbjYqx.css'><link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<h1 class="text-light"></h1>
 
-<div>
-	
+<!-- <div style="position: relative; width: 100%;">
+  <div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;">
+    <ul style="list-style-type: none; margin: 0; padding: 0;">
+		<li style="display: inline;"><a href="https://github.com/Tanishq-19" style="color: white;"><p style="padding: 30px; color: white; font-weight: bold;">GitHub</p></a></li>
+		<li style="display: inline;"><a href="https://www.linkedin.com/in/tanishq-chandra-27b289219/" style="color: white;"><p style="padding: 30px; color: white; font-weight: bold;">LinkedIn</p></a></li>	
+	</ul>
+  </div>
+</div> -->
+
+<div style="position: relative; width: 100%;">
+	<div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;">
+		<a href="https://github.com/Tanishq-19" style="color: white;"><p style="padding: 30px; color: white; font-weight: bold;">🐱GitHub</p></a>
+		
+	</div>
 </div>
+
 <br>
 <br>
-<h1 style="margin: 0 auto; width:500px; color: white; font-size: 200%;">Heart Disease Prediction</h1>
+<h1 style="margin: 0 auto; width:500px; color: white; font-size: 200%;">❤ Heart Disease Prediction</h1>
 <br>
 <br>		
 		<form class="form" style="margin: 0 auto; width:500px; color: white; font-weight: bold;" method="POST" action="{{url_for('predict')}}">
 			<!-- <h4 style="color: white; margin-bottom: 0;">Age</h6> -->
 			Age: <input type="number" placeholder="Type here" name="Age" required>
 			<br>
+			<br>
 			<!-- <h4 style="color: white; margin-bottom: 0;">Sex</h6> -->
 			Sex: <select name="Sex" required>
 				<option value=1>Male</option>
 				<option value=0>Female</option>
 			</select>
+			<br>
 			<br>
 			<!-- <h4 style="color: white; margin-bottom: 0;">Chest Pain Type</h6> -->
 			Chest Pain Type: <select name="CPT" required>
@@ -37,14 +51,18 @@
 				<option value=3>Asymptomatic</option>
 			</select>
 			<br>
+			<br>
 			<!-- <h4 style="color: white; margin-bottom: 0;">Resting blood pressure (in mm Hg on admission to the hospital)</h6> -->
 			Resting blood pressure (in mm Hg on admission to the hospital): <input type="number" placeholder="Type here" name="RBP" required>
+			<br>
+			<br>
+			<!-- <h4 style="color: white; margin-bottom: 0;">Serum cholestoral in mg/dl</h6> -->
+			Serum cholestoral in mg/dl: <input type="number" placeholder="Type here" name="SC" required>
 			
-			<h4 style="color: white; margin-bottom: 0;">Serum cholestoral in mg/dl</h6>
-			<input type="number" placeholder="Type here" name="SC" required>
-			
-			<h4 style="color: white; margin-bottom: 0;">Fasting blood sugar > 120 mg/dl</h6>
-			<select name="FBS" required>
+			<br>
+			<br>
+			<!-- <h4 style="color: white; margin-bottom: 0;">Fasting blood sugar > 120 mg/dl</h6> -->
+			Fasting blood sugar > 120 mg/dl: <select name="FBS" required>
 				<option value=1>True</option>
 				<option value=0>False</option>
 			</select>
@@ -55,12 +73,15 @@
 				<option value=1>ST-T Wave abnormality can range from mild symptoms to severe problems signals non-normal heart beat</option>
 				<option value=2>Possible or definite left ventricular hypertrophy Enlarged heart's main pumping chamber</option>
 			</select>
-			
-			<h4 style="color: white; margin-bottom: 0;">Maximum heart rate achieved</h6>
-			<input type="number" placeholder="Type here" name="MHR" required>
+			<br>
+			<br>
+			<!-- <h4 style="color: white; margin-bottom: 0;">Maximum heart rate achieved</h6> -->
+			Maximum heart rate achieved: <input type="number" placeholder="Type here" name="MHR" required>
 
-			<h4 style="color: white; margin-bottom: 0;">Exercise induced angina</h6>
-			<select name="EIA" required>
+			<br>
+			<br>
+			<!-- <h4 style="color: white; margin-bottom: 0;">Exercise induced angina</h6> -->
+			Exercise induced angina: <select name="EIA" required>
 				<option value=1>Yes</option>
 				<option value=0>No</option>
 			</select>
@@ -75,7 +96,10 @@
 				<option value=2>Downslopins</option>
 			</select>
 
-			<h4 style="color: white; margin-bottom: 0;">Number of major vessels</h6>
+			<br>
+			<br>
+			<!-- <h4 style="color: white; margin-bottom: 0;">Number of major vessels</h6> -->
+			Number of major vessels:
 			<select name="NMV" required>
 				<option value=0>0</option>
 				<option value=1>1</option>
@@ -84,7 +108,10 @@
 				<option value=4>4</option>
 			</select>			
 
-			<h4 style="color: white; margin-bottom: 0;">Thalium stress result</h6>
+			<br>
+			<br>
+			<!-- <h4 style="color: white; margin-bottom: 0;">Thalium stress result</h6> -->
+			Thalium stress result:
 				<select name="TSR" required>
 					<option value=0>0</option>
 					<option value=1>1</option>
@@ -98,13 +125,18 @@
 
 			<br>
 
-			<button type="submit" style="margin-left: 80px; margin-top: 30px; margin-bottom: 100px; padding: 10px;">Predict</button>
+			<button type="submit" style="margin-left: 80px; margin-top: 30px; margin-bottom: 70px; padding: 10px;">📈Predict</button>
 		
 			
 
 		</form>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+		<p style="color: white; margin: 0 auto; width:500px; padding-bottom: 60px;">Developed with love ❤ by <a href="https://tanishq-19.github.io/portfolio/" style="color: white; font-weight: bold;">Tanishq</a></p>
+
+		<br>
+		<br>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
 <!-- partial -->
   <script  src="{{ url_for('static',filename='styles/script.js') }}"></script>
 
